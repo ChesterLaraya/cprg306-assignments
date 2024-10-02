@@ -1,10 +1,13 @@
 
+
 export default function Home() {
 
   return(
-    <main>
-      <h1>CPRG 306: Web Development 2 - Assignments</h1>
-      <a href="http://localhost:3000/week-2">Week 2</a>
+    <main className="p-4">
+      <h1 className="text-3xl font-bold mb-6">CPRG 306: Web Development 2 - Assignments</h1>
+      <p><a href="http://localhost:3000/week-2">Week 2</a></p>
+      <p><a href="http://localhost:3000/week-3">Week 3</a></p>
+      <p><a href="http://localhost:3000/week-4">Week 4</a></p>
     </main>
   )
  
