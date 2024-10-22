@@ -16,32 +16,24 @@ export default function NewItem(){
     };
     
     
-
     const handleSubmit = (e) => {
         e.preventDefault(); // prevent form submissions
         const item = {name, count, category};
         console.log(item); // log the item object to the console for debugging purposes
-        
-        setName(""); // reset the input field to default
-        setCategory("");
+         
+        // reset the input field to default
+        setName("");
+        setCategory("produce");
         setCount(1);
     };
 
-    const item =
-    {
-        name,
-        count,
-        category,
-    };
 
-    const getName = (e) => {
+    const handleNameChange = (e) => {
         setName(e.target.value);
         console.log(e.target.name)
     };
     
-    //reset the input field to default
-
-
+   
 
     return (
       <main className="flex justify-center w-full">
@@ -52,23 +44,26 @@ export default function NewItem(){
             {/* Item Name bar code..*/}
             <div className="mb-2 p-2">
                 <input type="text" placeholder="Item name"  required className="w-full mt-1 border-2 border-gray-300 p-2 rounded-lg
-                    font-sans text-black" value={name} onChange={getName}/>
+                    font-sans text-black" value={name} onChange={handleNameChange}/>
             </div>
 
             
             <div className="flex justify-between items-center">
-                {/* quantity code here..(Week-4)*/}
+
+                {/* quantity code here*/}
               <div className="p-2 m-4 w-36 bg-white rounded-md"> 
                 <div className="flex justify-between ">
                   <span className="text-black">{count}</span>
             
                   <div className="flex">
                 
-                    <button onClick={decrement} className="w-8 bg-blue-500 text-white font-semibold rounded-lg shadow-md 
+                    <button type="button"
+                    onClick={decrement} className="w-8 bg-blue-500 text-white font-semibold rounded-lg shadow-md 
                     hover:bg-blue-700 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-blue-400 focus:ring-opacity-75">
                         -
                     </button>
-                    <button onClick={increment} className="w-8 bg-blue-500 text-white font-semibold rounded-lg shadow-md 
+                    <button type="button"
+                    onClick={increment} className="w-8 bg-blue-500 text-white font-semibold rounded-lg shadow-md 
                     hover:bg-blue-700 focus:outline-none focus:ring-2 disabled:bg-gray-400 focus:ring-blue-400 focus:ring-opacity-75">
                         +
                     </button>
@@ -77,7 +72,7 @@ export default function NewItem(){
               </div>
 
 
-            {/* category code here..(Week-5)*/}
+            {/* category code here*/}
             
               <div className=" p-2 m-4  ">
                 <select value={category} placeholder='Produce'onChange={(e) => setCategory(e.target.value)} 
