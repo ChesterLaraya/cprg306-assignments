@@ -10,6 +10,7 @@ export default function Home() {
       <p><a href="http://localhost:3000/week-4">Week 4</a></p>
       <p><a href="http://localhost:3000/week-5">Week 5</a></p>
       <p><a href="http://localhost:3000/week-6">Week 6</a></p>
+      <p><a href="http://localhost:3000/week-7">Week 7</a></p>
     </main>
   )
  
